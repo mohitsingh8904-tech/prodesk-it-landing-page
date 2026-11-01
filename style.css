@@ -1,6 +1,9 @@
-/* =================================
+/* =========================================
    PRODESK IT - CORPORATE LANDING PAGE
-================================= */
+========================================= */
+
+
+/* ---------- Theme tokens & reset ---------- */
 
 :root {
     --primary: #2563eb;
@@ -34,17 +37,14 @@ body {
 }
 
 a {
-    text-decoration: none;
     color: inherit;
-}
-
-button,
-a {
+    text-decoration: none;
     -webkit-tap-highlight-color: transparent;
 }
 
 button {
     font: inherit;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container {
@@ -56,8 +56,12 @@ button {
     padding: 100px 0;
 }
 
+#home {
+    scroll-margin-top: 82px;
+}
 
-/* NAVBAR */
+
+/* ---------- Header & navigation ---------- */
 
 .header {
     position: sticky;
@@ -148,8 +152,29 @@ button {
     background: var(--white);
 }
 
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.08);
+    font-size: 19px;
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
 
-/* HERO */
+.theme-toggle:hover {
+    background: rgba(37, 99, 235, 0.25);
+    border-color: #60a5fa;
+    transform: rotate(15deg);
+}
+
+
+/* ---------- Hero ---------- */
 
 .hero {
     position: relative;
@@ -248,12 +273,12 @@ button {
 
 .trust-dot,
 .live-dot {
-    color: #34d399;
     margin-right: 8px;
+    color: #34d399;
 }
 
 
-/* HERO VISUAL */
+/* ---------- Hero visual card ---------- */
 
 .hero-visual {
     display: flex;
@@ -273,8 +298,8 @@ button {
 .visual-top,
 .visual-bottom {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     color: #cbd5e1;
     font-size: 11px;
     font-weight: 700;
@@ -317,7 +342,7 @@ button {
 }
 
 
-/* ABOUT */
+/* ---------- About ---------- */
 
 .about {
     background: var(--white);
@@ -345,7 +370,7 @@ button {
 }
 
 
-/* SERVICES */
+/* ---------- Services ---------- */
 
 .services {
     background: var(--light-bg);
@@ -414,7 +439,7 @@ button {
 }
 
 
-/* CONTACT */
+/* ---------- Contact ---------- */
 
 .contact {
     color: var(--white);
@@ -432,7 +457,7 @@ button {
 }
 
 
-/* FOOTER */
+/* ---------- Footer ---------- */
 
 .footer {
     padding: 28px 0;
@@ -474,7 +499,156 @@ button {
 }
 
 
-/* RESPONSIVE TABLET */
+/* ---------- Light theme: premium mixed style ---------- */
+
+body.light-theme {
+    --text: #172033;
+    --muted: #64748b;
+    --light-bg: #ffffff;
+    --border: #dbe3ee;
+    background: #f8fafc;
+    color: #172033;
+}
+
+body.light-theme .header {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #e2e8f0;
+}
+
+body.light-theme .logo,
+body.light-theme .nav-link {
+    color: #172033;
+}
+
+body.light-theme .theme-toggle {
+    background: #eaf0f8;
+    border-color: #cbd5e1;
+}
+
+body.light-theme .about,
+body.light-theme .services {
+    background: #f8fafc;
+    color: #172033;
+}
+
+body.light-theme .about p,
+body.light-theme .section-heading p,
+body.light-theme .service-card p {
+    color: #64748b;
+}
+
+body.light-theme .service-card {
+    background: #ffffff;
+    border-color: #e2e8f0;
+}
+
+body.light-theme .contact {
+    color: #172033;
+    background: #f8fafc;
+}
+
+body.light-theme .contact h2 {
+    color: #172033;
+}
+
+body.light-theme .contact p {
+    color: #64748b;
+}
+
+
+/* Hero and footer intentionally stay dark in light mode */
+
+body.light-theme .footer {
+    color: #ffffff;
+    background: #061225;
+}
+
+body.light-theme .footer .logo {
+    color: #ffffff;
+}
+
+body.light-theme .footer .logo-highlight {
+    color: #60a5fa;
+}
+
+body.light-theme .footer p {
+    color: #cbd5e1;
+}
+
+body.light-theme .footer a {
+    color: #ffffff;
+}
+
+
+/* ---------- Dark theme ---------- */
+
+body:not(.light-theme) {
+    background: #0b1729;
+    color: #f8fafc;
+}
+
+body:not(.light-theme) .about,
+body:not(.light-theme) .services {
+    background: #0b1729;
+    color: #f8fafc;
+}
+
+body:not(.light-theme) .about h2,
+body:not(.light-theme) .services h2,
+body:not(.light-theme) .contact h2,
+body:not(.light-theme) .service-card h3 {
+    color: #ffffff;
+}
+
+body:not(.light-theme) .about p,
+body:not(.light-theme) .section-heading p,
+body:not(.light-theme) .service-card p,
+body:not(.light-theme) .contact p {
+    color: #cbd5e1;
+}
+
+body:not(.light-theme) .service-card {
+    background: #14243a;
+    border-color: #263b56;
+}
+
+body:not(.light-theme) .service-link {
+    color: #93c5fd;
+}
+
+body:not(.light-theme) .service-link:hover {
+    color: #bfdbfe;
+}
+
+body.light-theme .service-link {
+    color: #1d4ed8;
+}
+
+body.light-theme .service-link:hover {
+    color: #1e40af;
+}
+
+
+/* ---------- Accessibility ---------- */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #60a5fa;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* ---------- Tablet layout ---------- */
 
 @media (max-width: 900px) {
     .hero-content {
@@ -502,7 +676,7 @@ button {
 }
 
 
-/* RESPONSIVE MOBILE */
+/* ---------- Mobile layout & navigation ---------- */
 
 @media (max-width: 600px) {
     .section-padding {
@@ -510,30 +684,71 @@ button {
     }
     .navbar {
         min-height: 72px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo {
+        order: 1;
+    }
+    .theme-toggle {
+        order: 2;
+        margin-left: auto;
+        margin-right: 10px;
     }
     .menu-toggle {
+        order: 3;
         display: block;
+        width: 38px;
+        height: 38px;
+        padding: 9px;
+        border: 1px solid #64748b;
+        border-radius: 8px;
+        background: #14243a;
+    }
+    .menu-toggle span {
+        width: 100%;
+        height: 2px;
+        margin: 4px 0;
+        background: #ffffff;
+        border-radius: 2px;
+    }
+    body.light-theme .menu-toggle {
+        background: #eaf0f8;
+        border-color: #cbd5e1;
+    }
+    body.light-theme .menu-toggle span {
+        background: #172033;
     }
     .nav-menu {
-        position: absolute;
-        top: 72px;
-        left: 0;
-        right: 0;
+        order: 4;
+        position: static;
         display: none;
+        flex: 0 0 100%;
+        width: 100%;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-        padding: 15px 5%;
+        padding: 10px 0 15px;
         background: #071426;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0 0 10px 10px;
     }
     .nav-menu.active {
         display: flex;
     }
-    .nav-link {
-        padding: 14px 5px;
+    .nav-menu .nav-link {
+        display: block;
+        width: 100%;
+        padding: 13px 15px;
+        color: #ffffff !important;
+        text-align: left;
     }
-    .nav-cta {
+    .nav-menu .nav-link:hover {
+        color: #60a5fa !important;
+        background: #14243a;
+    }
+    .nav-menu .nav-cta {
         margin-top: 8px;
         text-align: center;
     }
@@ -575,333 +790,20 @@ button {
 }
 
 
-/* ACCESSIBILITY */
+/* Accessibility: Light Theme Contrast Fix */
 
-a:focus-visible,
-button:focus-visible {
-    outline: 3px solid #60a5fa;
-    outline-offset: 4px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-#home {
-    scroll-margin-top: 82px;
-}
-
-
-/* Theme Toggle Button */
-
-.theme-toggle {
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.08);
-    color: #ffffff;
-    font-size: 19px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.theme-toggle:hover {
-    background: rgba(37, 99, 235, 0.25);
-    border-color: #60a5fa;
-    transform: rotate(15deg);
-}
-
-
-/* =====================================
-   LIGHT THEME
-===================================== */
-
-body.light-theme {
-    --navy: #f8fafc;
-    --navy-light: #eaf0f8;
-    --text: #172033;
-    --muted: #64748b;
-    --light-bg: #ffffff;
-    --border: #dbe3ee;
-}
-
-body.light-theme {
-    background: #f8fafc;
-    color: #172033;
-}
-
-body.light-theme .header {
-    background: rgba(255, 255, 255, 0.95);
-    border-bottom: 1px solid #e2e8f0;
-}
-
-body.light-theme .logo,
-body.light-theme .nav-link {
-    color: #172033;
-}
-
-body.light-theme .about,
-body.light-theme .services,
-body.light-theme .contact {
-    background: #f8fafc;
-    color: #172033;
-}
-
-body.light-theme .service-card {
-    background: #ffffff;
-    border-color: #e2e8f0;
-}
-
-body.light-theme .theme-toggle {
-    background: #eaf0f8;
-    border-color: #cbd5e1;
-}
-
-
-/* =====================================
-   LIGHT THEME
-===================================== */
-
-body.light-theme {
-    --navy: #f8fafc;
-    --navy-light: #eaf0f8;
-    --text: #172033;
-    --muted: #64748b;
-    --light-bg: #ffffff;
-    --border: #dbe3ee;
-}
-
-body.light-theme {
-    background: #f8fafc;
-    color: #172033;
-}
-
-body.light-theme .header {
-    background: rgba(255, 255, 255, 0.95);
-    border-bottom: 1px solid #e2e8f0;
-}
-
-body.light-theme .logo,
-body.light-theme .nav-link {
-    color: #172033;
-}
-
-body.light-theme .about,
-body.light-theme .services,
-body.light-theme .contact {
-    background: #f8fafc;
-    color: #172033;
-}
-
-body.light-theme .service-card {
-    background: #ffffff;
-    border-color: #e2e8f0;
-}
-
-body.light-theme .theme-toggle {
-    background: #eaf0f8;
-    border-color: #cbd5e1;
-}
-
-
-/* Premium Mixed Theme Improvements */
-
-body.light-theme .contact p,
-body.light-theme .contact .section-description {
-    color: #64748b;
-}
-
-body.light-theme .footer .logo {
-    color: #ffffff;
-}
-
-body.light-theme .footer .logo span {
-    color: #60a5fa;
-}
-
-body.light-theme .footer {
-    background: #061225;
-    color: #ffffff;
-}
-
-body.light-theme .footer p {
-    color: #cbd5e1;
-}
-
-body.light-theme .footer a {
-    color: #ffffff;
-}
-
-
-/* =====================================
-   DARK THEME - ABOUT & SERVICES
-===================================== */
-
-body:not(.light-theme) .about,
-body:not(.light-theme) .services,
-body:not(.light-theme) .contact {
-    background: #0b1729;
-    color: #f8fafc;
-}
-
-body:not(.light-theme) .about h2,
-body:not(.light-theme) .services h2,
-body:not(.light-theme) .contact h2 {
-    color: #f8fafc;
-}
-
-body:not(.light-theme) .about p,
-body:not(.light-theme) .services p,
-body:not(.light-theme) .contact p {
-    color: #cbd5e1;
-}
-
-body:not(.light-theme) .service-card {
-    background: #14243a;
-    border-color: #263b56;
-}
-
-body:not(.light-theme) .service-card h3 {
-    color: #ffffff;
-}
-
-body:not(.light-theme) .service-card p {
-    color: #cbd5e1;
-}
-
-@media (max-width: 600px) {
-    .menu-toggle {
-        width: 38px;
-        height: 38px;
-        border: 1px solid #64748b;
-        border-radius: 8px;
-        background: #14243a;
-        padding: 9px;
-        cursor: pointer;
-    }
-    .menu-toggle span {
-        display: block;
-        width: 100%;
-        height: 2px;
-        margin: 4px 0;
-        background: #ffffff;
-        border-radius: 2px;
-    }
-    body.light-theme .menu-toggle {
-        background: #eaf0f8;
-        border-color: #cbd5e1;
-    }
-    body.light-theme .menu-toggle span {
-        background: #172033;
-    }
-}
-
-
-/* =====================================
-   MOBILE NAVIGATION FIX
-===================================== */
-
-@media (max-width: 600px) {
-    .navbar {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .nav-menu {
-        position: static;
-        width: 100%;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding: 10px 0 15px;
-        background: #071426;
-        border-radius: 0 0 10px 10px;
-    }
-    .nav-menu.active {
-        display: flex;
-    }
-    .nav-menu .nav-link {
-        display: block;
-        width: 100%;
-        padding: 13px 15px;
-        color: #ffffff !important;
-        text-align: left;
-    }
-    .nav-menu .nav-link:hover {
-        background: #14243a;
-        color: #60a5fa !important;
-    }
-    .nav-menu .nav-cta {
-        text-align: center;
-        margin-top: 8px;
-    }
-    body.light-theme .nav-menu {
-        background: #071426;
-    }
-}
-
-
-/* Mobile Navbar Alignment */
-
-@media (max-width: 600px) {
-    .navbar {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .logo {
-        order: 1;
-    }
-    .theme-toggle {
-        order: 2;
-        margin-left: auto;
-        margin-right: 10px;
-    }
-    .menu-toggle {
-        order: 3;
-    }
-    .nav-menu {
-        order: 4;
-        width: 100%;
-        flex-basis: 100%;
-    }
-}
-
-
-/* =====================================
-   ACCESSIBILITY - COLOR CONTRAST FIX
-===================================== */
-
-
-/* Dark Theme */
-
-body:not(.light-theme) .service-link {
-    color: #93c5fd;
-}
-
-body:not(.light-theme) .service-link:hover {
-    color: #bfdbfe;
-}
-
-
-/* Light Theme */
-
-body.light-theme .service-link {
+body.light-theme .section-tag {
     color: #1d4ed8;
 }
 
-body.light-theme .service-link:hover {
-    color: #1e40af;
+body.light-theme .logo-highlight {
+    color: #1d4ed8;
+}
+
+
+/* Keep dark theme blue text readable */
+
+body:not(.light-theme) .section-tag,
+body:not(.light-theme) .logo-highlight {
+    color: #60a5fa;
 }

@@ -73,13 +73,10 @@ cd prodesk-it-landing-page
 
 ## Live Demo
 
-**Live Website:** Add your deployed Vercel URL here.
+**Live Website:** https://drive.google.com/file/d/1TtUPQ6rm4eqye8b1Iz21RGv8FQsmUgk0/view?usp=sharing
 
-**GitHub Repository:** Add your GitHub repository URL here.
+**GitHub Repository:** https://github.com/mohitsingh8904-tech/prodesk-it-landing-page
 
-## Screenshots
-
-Add your project screenshots inside the `assets/images/` folder and link them here.
 
 ## Project Information
 
